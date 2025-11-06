@@ -2,8 +2,14 @@ fastapi
 uvicorn[standard]
 sqlalchemy[asyncio]
 aiomysql
-bcrypt
+bcrypt==4.3.0
+passlib[argon2]
 python-jose[cryptography]
 pydantic
+pydantic[email]
 python-dotenv
 alembic
+pytest
+pytest-asyncio
+httpx
+aiosqlite

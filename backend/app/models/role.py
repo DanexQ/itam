@@ -7,3 +7,6 @@ class Role(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(50), unique=True, nullable=False)
     description = Column(Text, nullable=True)
+
+    def __repr__(self):
+        return f"<Role(id={self.id}, name={self.name})>"

@@ -3,6 +3,7 @@ from sqlalchemy import Column, String, Boolean, ForeignKey, DateTime, func, Inte
 from sqlalchemy.dialects.mysql import CHAR
 from sqlalchemy.orm import relationship
 from app.core.database import Base
+from app.models.role import Role
 
 class User(Base):
     __tablename__ = "users"
