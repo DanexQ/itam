@@ -7,6 +7,6 @@ build:
     services:
       - docker:dind
     script:
-      - docker build -t itam-build:latest ./backend
+      - docker build -f backend/Dockerfile -t itam-build:latest .
     only:
       - main  
