@@ -2,7 +2,7 @@ stages:
   - build_backend
 
 build_backend:
-  stage: build
+  stage: build_backend
   image: docker:latest
   services:
     - docker:dind
