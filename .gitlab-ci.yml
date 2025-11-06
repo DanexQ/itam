@@ -1,5 +1,6 @@
 stages:
   - build_backend
+  - test_backend
 
 build_backend:
   stage: build_backend
@@ -8,3 +9,15 @@ build_backend:
     - docker:dind
   script:
     - docker build -f backend/Dockerfile -t itam-backend:latest backend/
+
+test_backend:
+  stage: test_backend
+  image: python:3.11
+  before_script:
+    - pip install --upgrade pip
+    - pip install -r backend/requirements.txt
+  script:
+    - echo "Running tests with SQLite..."
+    - PYTHONPATH=backend/ pytest -v --maxfail=1 --disable-warnings
+  only:
+    - main
