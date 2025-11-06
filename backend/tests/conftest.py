@@ -3,7 +3,7 @@ import pytest
 from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
-from dotenv import load.dotenv
+from dotenv import load_dotenv
 from app.main import app
 from app.core.database import Base, get_session
 
