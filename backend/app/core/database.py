@@ -5,7 +5,8 @@ from pathlib import Path
 import os 
 
 dotenv_path = Path(__file__).resolve().parents[3] / '.env'
-load_dotenv(dotenv_path)
+if dotenv_path.exists(): 
+    load_dotenv(dotenv_path)
 
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")

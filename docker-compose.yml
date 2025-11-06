@@ -33,6 +33,8 @@ services:
       DB_USER: itam_user
       DB_PASS: itam_pass
       DB_NAME: itam
+      JWT_SECRET: secret
+      JWT_ALGORITHM: HS256    
     networks:
       - itam_net
   
