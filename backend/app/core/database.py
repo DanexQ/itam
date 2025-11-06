@@ -3,13 +3,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 import os
 
-# 🔹 Znajdź absolutną ścieżkę do katalogu backend
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-ENV_PATH = os.path.join(BASE_DIR, ".env")
-load_dotenv(ENV_PATH)
-
-print(">>> ENV PATH:", ENV_PATH)
-print(">>> DB_HOST:", os.getenv("DB_HOST"))
+load_dotenv()
 
 DB_USER = os.getenv("DB_USER", "app")
 DB_PASS = os.getenv("DB_PASS", "secret")
