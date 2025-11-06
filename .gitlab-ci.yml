@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build:
+    stage: build
+    image: docker:latest
+    services:
+      - docker:dind
+    script:
+      - docker buld -t itam-build:latest ./backend
+    only:
+      - main  
