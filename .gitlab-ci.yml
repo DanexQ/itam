@@ -1,0 +1,10 @@
+stages:
+  - build_backend
+
+build_backend:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker build -f backend/Dockerfile -t my-backend .
