@@ -7,6 +7,6 @@ build:
     services:
       - docker:dind
     script:
-      - docker buld -t itam-build:latest ./backend
+      - docker build -t itam-build:latest ./backend
     only:
       - main  
