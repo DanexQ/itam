@@ -6,9 +6,12 @@ from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 from app.main import app
 from app.core.database import Base, get_session
+from pathlib import Path
 
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
+dotenv_path = Path(__file__).with_name(".env.tests")
+load_dotenv(dotenv_path)
 load_dotenv(".env.tests")
 engine = create_async_engine(TEST_DATABASE_URL, echo=False, future=True)
 AsyncSessionLocal = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
