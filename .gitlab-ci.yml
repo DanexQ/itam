@@ -7,4 +7,4 @@ build_backend:
   services:
     - docker:dind
   script:
-    - docker build -f backend/Dockerfile -t my-backend .
+    - docker build -f backend/Dockerfile -t itam-backend:latest backend/
