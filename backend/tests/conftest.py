@@ -1,17 +1,15 @@
-# backend/tests/test_auth.py
 import pytest_asyncio
 import pytest
 from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
-
+from dotenv import load.dotenv
 from app.main import app
 from app.core.database import Base, get_session
 
-# Testowa baza w pamięci
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
-# Asynchroniczny silnik i sesja testowa
+load_dotenv(".env.tests")
 engine = create_async_engine(TEST_DATABASE_URL, echo=False, future=True)
 AsyncSessionLocal = sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=False)
 
